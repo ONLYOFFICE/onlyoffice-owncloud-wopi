@@ -1,5 +1,5 @@
 OC.L10N.register(
-    "wopi_onlyoffice",
+    "onlyoffice_wopi",
     {
     "Invalid request" : "Неправильный запрос",
     "File not found" : "Файл не найден",

@@ -17,7 +17,7 @@
  *
  */
 
-namespace OCA\Wopi_Onlyoffice\Controller;
+namespace OCA\Onlyoffice_Wopi\Controller;
 
 use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http\JSONResponse;
@@ -29,8 +29,8 @@ use OCP\IRequest;
 use OCP\IUserManager;
 use OCP\Lock\LockedException;
 
-use OCA\Wopi_Onlyoffice\AppConfig;
-use OCA\Wopi_Onlyoffice\TokenManager;
+use OCA\Onlyoffice_Wopi\AppConfig;
+use OCA\Onlyoffice_Wopi\TokenManager;
 
 /**
  * Controller with the main functions

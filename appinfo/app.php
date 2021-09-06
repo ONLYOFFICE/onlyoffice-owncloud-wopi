@@ -17,7 +17,7 @@
  *
  */
 
-namespace OCA\Wopi_Onlyoffice\AppInfo;
+namespace OCA\Onlyoffice_Wopi\AppInfo;
 
 use OCP\App;
 

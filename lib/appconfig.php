@@ -17,7 +17,7 @@
  *
  */
 
-namespace OCA\Wopi_Onlyoffice;
+namespace OCA\Onlyoffice_Wopi;
 
 use OCP\IConfig;
 

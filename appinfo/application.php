@@ -17,16 +17,16 @@
  *
  */
 
-namespace OCA\Wopi_Onlyoffice\AppInfo;
+namespace OCA\Onlyoffice_Wopi\AppInfo;
 
 use OCP\AppFramework\App;
 use OCP\Files\IMimeTypeDetector;
 use OCP\Util;
 
-use OCA\Wopi_Onlyoffice\AppConfig;
-use OCA\Wopi_Onlyoffice\Controller\WopiController;
-use OCA\Wopi_Onlyoffice\Controller\EditorController;
-use OCA\Wopi_Onlyoffice\Controller\SettingsController;
+use OCA\Onlyoffice_Wopi\AppConfig;
+use OCA\Onlyoffice_Wopi\Controller\WopiController;
+use OCA\Onlyoffice_Wopi\Controller\EditorController;
+use OCA\Onlyoffice_Wopi\Controller\SettingsController;
 
 class Application extends App {
 
@@ -38,7 +38,7 @@ class Application extends App {
     public $appConfig;
 
     public function __construct(array $urlParams = []) {
-        $appName = "wopi_onlyoffice";
+        $appName = "onlyoffice_wopi";
 
         parent::__construct($appName, $urlParams);
 
@@ -49,9 +49,9 @@ class Application extends App {
         $eventDispatcher->addListener("OCA\Files::loadAdditionalScripts",
             function () {
                 if (!empty($this->appConfig->GetDocumentServerUrl())) {
-                    Util::addScript("wopi_onlyoffice", "main");
+                    Util::addScript("onlyoffice_wopi", "main");
 
-                    Util::addStyle("wopi_onlyoffice", "main");
+                    Util::addStyle("onlyoffice_wopi", "main");
                 }
             });
 

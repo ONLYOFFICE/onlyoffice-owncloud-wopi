@@ -17,8 +17,8 @@
  *
  */
 
-    style("wopi_onlyoffice", "editor");
-    script("wopi_onlyoffice", "editor");
+    style("onlyoffice_wopi", "editor");
+    script("onlyoffice_wopi", "editor");
 
 ?>
 

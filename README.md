@@ -5,7 +5,7 @@
 ## Setting
 Settings to сonfig file owncloud/config/config.php:
 ```bash
-    'wopi_onlyoffice' =>
+    'onlyoffice_wopi' =>
         array (
             'DocumentServerUrl' => 'http(s)://document_server_address/',
             'secret' => 'random_secret_string'

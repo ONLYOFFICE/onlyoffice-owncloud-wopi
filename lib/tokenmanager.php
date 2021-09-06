@@ -17,11 +17,11 @@
  *
  */
 
-namespace OCA\Wopi_Onlyoffice;
+namespace OCA\Onlyoffice_Wopi;
 
 use OCP\ILogger;
 
-use OCA\Wopi_Onlyoffice\AppConfig;
+use OCA\Onlyoffice_Wopi\AppConfig;
 
 /**
  * Token manager

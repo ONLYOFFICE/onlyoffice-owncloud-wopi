@@ -17,14 +17,14 @@
  *
  */
 
-namespace OCA\Wopi_Onlyoffice\Controller;
+namespace OCA\Onlyoffice_Wopi\Controller;
 
 use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;
 
-use OCA\Wopi_Onlyoffice\AppConfig;
-use OCA\Wopi_Onlyoffice\Utils;
+use OCA\Onlyoffice_Wopi\AppConfig;
+use OCA\Onlyoffice_Wopi\Utils;
 
 /**
  * Controller with the main functions

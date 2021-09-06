@@ -1,7 +1,7 @@
 (function (OCA) {
 
     OCA.WopiOnlyoffice = _.extend({
-        AppName: "wopi_onlyoffice",
+        AppName: "onlyoffice_wopi",
     }, OCA.WopiOnlyoffice);
 
     OCA.WopiOnlyoffice.setting = {};

@@ -17,9 +17,9 @@
  *
  */
 
-namespace OCA\Wopi_Onlyoffice;
+namespace OCA\Onlyoffice_Wopi;
 
-use OCA\Wopi_Onlyoffice\AppConfig;
+use OCA\Onlyoffice_Wopi\AppConfig;
 
 /**
  * Utils function
