@@ -87,10 +87,11 @@ class WopiController extends OCSController {
      *
      * @param int $fileId - file identifier
      * @param string $access_token - access token
-     * 
+     *
      * @return JSONResponse
      *
      * @NoAdminRequired
+     * @NoCSRFRequired
      * @CORS
      * @PublicPage
      */
@@ -139,10 +140,11 @@ class WopiController extends OCSController {
      *
      * @param int $fileId - file identifier
      * @param string $access_token - access token
-     * 
+     *
      * @return DataDownloadResponse|JSONResponse
      *
      * @NoAdminRequired
+     * @NoCSRFRequired
      * @CORS
      * @PublicPage
      */
@@ -181,10 +183,11 @@ class WopiController extends OCSController {
      *
      * @param int $fileId - file identifier
      * @param string $access_token - access token
-     * 
+     *
      * @return JSONResponse
      *
      * @NoAdminRequired
+     * @NoCSRFRequired
      * @CORS
      * @PublicPage
      */
