@@ -21,7 +21,6 @@ namespace OCA\Wopi_Onlyoffice\Controller;
 
 use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http\JSONResponse;
-use OCP\ILogger;
 use OCP\IRequest;
 
 use OCA\Wopi_Onlyoffice\AppConfig;
@@ -33,13 +32,6 @@ use OCA\Wopi_Onlyoffice\Utils;
 class SettingsController extends OCSController {
 
     /**
-     * Logger
-     *
-     * @var ILogger
-     */
-    private $logger;
-
-    /**
      * Application configuration
      *
      * @var AppConfig
@@ -47,22 +39,25 @@ class SettingsController extends OCSController {
     private $config;
 
     /**
+     * Utils function
+     *
+     * @var Utils
+     */
+    private $utils;
+
+    /**
      * @param string $AppName - application name
      * @param IRequest $request - request object
-     * @param ILogger $logger - logger
      * @param AppConfig $config - application configuration
      */
     public function __construct($AppName,
                                     IRequest $request,
-                                    ILogger $logger,
                                     AppConfig $config
                                     ) {
         parent::__construct($AppName, $request);
-
-        $this->logger = $logger;
         $this->config = $config;
 
-        $this->utils = new Utils($AppName, $config);
+        $this->utils = new Utils($config);
     }
 
     /**

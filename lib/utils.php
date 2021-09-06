@@ -19,48 +19,28 @@
 
 namespace OCA\Wopi_Onlyoffice;
 
-use OCP\ILogger;
-
 use OCA\Wopi_Onlyoffice\AppConfig;
 
 /**
- * Application configutarion
+ * Utils function
  *
  * @package OCA\Onlyoffice
  */
 class Utils {
 
     /**
-     * Application name
-     *
-     * @var string
-     */
-    private $appName;
-
-    /**
-     * Logger
-     *
-     * @var ILogger
-     */
-    private $logger;
-
-    /**
      * Logger
      *
      * @var AppConfig
      */
-    private $appConfig;
+    private $config;
 
     /**
-     * @param string $AppName - application name
      * @param AppConfig $appConfig - application configuration
      */
-    public function __construct($AppName, $appConfig) {
+    public function __construct($appConfig) {
 
-        $this->appName = $AppName;
         $this->config = $appConfig;
-
-        $this->logger = \OC::$server->getLogger();
     }
 
     /**

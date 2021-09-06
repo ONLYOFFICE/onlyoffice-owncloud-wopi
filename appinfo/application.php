@@ -95,9 +95,7 @@ class Application extends App {
                 $c->query("AppName"),
                 $c->query("Request"),
                 $c->query("RootStorage"),
-                $c->query("URLGenerator"),
                 $c->query("ServerContainer")->getUserManager(),
-                $c->query("L10N"),
                 $c->query("Logger"),
                 $this->appConfig
             );
@@ -120,7 +118,6 @@ class Application extends App {
             return new SettingsController(
                 $c->query("AppName"),
                 $c->query("Request"),
-                $c->query("Logger"),
                 $this->appConfig
             );
         });

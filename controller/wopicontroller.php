@@ -23,25 +23,14 @@ use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\AppFramework\Http\DataDownloadResponse;
 use OCP\AppFramework\Http;
-use OCP\Constants;
-use OCP\Files\File;
-use OCP\Files\Folder;
 use OCP\Files\IRootFolder;
-use OCP\Files\Storage\IPersistentLockingStorage;
-use OCP\Lock\Persistent\ILock;
-use OCP\IL10N;
 use OCP\ILogger;
 use OCP\IRequest;
-use OCP\ISession;
-use OCP\ITagManager;
-use OCP\IURLGenerator;
-use OCP\IUser;
 use OCP\IUserManager;
 use OCP\Lock\LockedException;
 
 use OCA\Wopi_Onlyoffice\AppConfig;
 use OCA\Wopi_Onlyoffice\TokenManager;
-use OCA\Wopi_Onlyoffice\Utils;
 
 /**
  * Controller with the main functions
@@ -63,20 +52,6 @@ class WopiController extends OCSController {
     private $root;
 
     /**
-     * Url generator service
-     *
-     * @var IURLGenerator
-     */
-    private $urlGenerator;
-
-    /**
-     * l10n service
-     *
-     * @var IL10N
-     */
-    private $trans;
-
-    /**
      * Logger
      *
      * @var ILogger
@@ -84,41 +59,26 @@ class WopiController extends OCSController {
     private $logger;
 
     /**
-     * Application configuration
-     *
-     * @var AppConfig
-     */
-    private $config;
-
-    /**
      * @param string $AppName - application name
      * @param IRequest $request - request object
      * @param IRootFolder $root - root folder
-     * @param IURLGenerator $urlGenerator - url generator service
      * @param IUserManager $userManager - user manager
-     * @param IL10N $trans - l10n service
      * @param ILogger $logger - logger
      * @param AppConfig $config - application configuration
      */
     public function __construct($AppName,
                                     IRequest $request,
                                     IRootFolder $root,
-                                    IURLGenerator $urlGenerator,
                                     IUserManager $userManager,
-                                    IL10N $trans,
                                     ILogger $logger,
                                     AppConfig $config
                                     ) {
         parent::__construct($AppName, $request);
 
         $this->root = $root;
-        $this->urlGenerator = $urlGenerator;
         $this->userManager = $userManager;
-        $this->trans = $trans;
         $this->logger = $logger;
-        $this->config = $config;
 
-        $this->utils = new Utils($AppName, $config);
         $this->tokenManager = new TokenManager($AppName, $config);
     }
 

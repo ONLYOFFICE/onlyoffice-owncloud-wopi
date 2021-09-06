@@ -23,8 +23,6 @@ use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\Files\IRootFolder;
-use OCP\Files\Storage\IPersistentLockingStorage;
-use OCP\Lock\Persistent\ILock;
 use OCP\IL10N;
 use OCP\ILogger;
 use OCP\IRequest;
@@ -83,6 +81,13 @@ class EditorController extends Controller {
     private $config;
 
     /**
+     * Utils function
+     *
+     * @var Utils
+     */
+    private $utils;
+
+    /**
      * Application configuration
      *
      * @var TokenManager
@@ -117,7 +122,7 @@ class EditorController extends Controller {
         $this->logger = $logger;
         $this->config = $config;
 
-        $this->utils = new Utils($AppName, $config);
+        $this->utils = new Utils($config);
         $this->tokenManager = new TokenManager($AppName, $config);
     }
 

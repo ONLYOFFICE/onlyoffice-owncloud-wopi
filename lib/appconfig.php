@@ -19,11 +19,7 @@
 
 namespace OCA\Wopi_Onlyoffice;
 
-use \DateInterval;
-use \DateTime;
-
 use OCP\IConfig;
-use OCP\ILogger;
 
 /**
  * Application configutarion
@@ -45,13 +41,6 @@ class AppConfig {
      * @var IConfig
      */
     private $config;
-
-    /**
-     * Logger
-     *
-     * @var ILogger
-     */
-    private $logger;
 
 
     /**
@@ -76,7 +65,6 @@ class AppConfig {
         $this->appName = $AppName;
 
         $this->config = \OC::$server->getConfig();
-        $this->logger = \OC::$server->getLogger();
     }
 
     /**
@@ -101,11 +89,9 @@ class AppConfig {
     /**
      * Get the document service address from the application configuration
      *
-     * @param bool $origin - take origin
-     *
      * @return string
      */
-    public function GetDocumentServerUrl($origin = false) {
+    public function GetDocumentServerUrl() {
 
         $url = $this->GetSystemValue($this->_documentserver);
 
@@ -120,8 +106,6 @@ class AppConfig {
 
     /**
      * Get secret
-     *
-     * @param bool $origin - take origin
      *
      * @return string
      */

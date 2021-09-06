@@ -22,13 +22,10 @@
 
 ?>
 
-<body>
 
-    <form id="office_form" name="office_form" target="office_frame" action="<?php p($_["actionUrl"]) ?>" method="post">
-        <input name="access_token" value="<?php p($_["token"]) ?>" type="hidden" />
-        <input name="access_token_ttl" value="<?php p($_["tokenttl"]) ?>" type="hidden" />
-    </form>
+<form id="office_form" name="office_form" target="office_frame" action="<?php p($_["actionUrl"]) ?>" method="post">
+    <input name="access_token" value="<?php p($_["token"]) ?>" type="hidden" />
+    <input name="access_token_ttl" value="<?php p($_["tokenttl"]) ?>" type="hidden" />
+</form>
 
-    <span id="frameholder"></span>
-
-</body>
+<span id="frameholder"></span>
