@@ -19,7 +19,7 @@
 
 namespace OCA\Onlyoffice_Wopi\Controller;
 
-use OCP\AppFramework\OCSController;
+use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\AppFramework\Http\DataDownloadResponse;
 use OCP\AppFramework\Http;
@@ -35,7 +35,7 @@ use OCA\Onlyoffice_Wopi\TokenManager;
 /**
  * Controller with the main functions
  */
-class WopiController extends OCSController {   
+class WopiController extends Controller {
 
     /**
     * User manager

@@ -207,7 +207,7 @@ class EditorController extends Controller {
      * @return string
      */
     private function getActionUrl($action, $fileId) {
-        $wopisrc = $this->urlGenerator->getAbsoluteURL("ocs/v2.php/apps/" . $this->appName . "/files/" . $fileId);
+        $wopisrc = $this->urlGenerator->linkToRouteAbsolute($this->appName . ".wopi.check_file_info", ["fileId" => $fileId]);
         $actionUrl = preg_replace("/<.*&>/", "", $action["urlsrc"]) . "WOPISrc=" . $wopisrc;
 
         return $actionUrl;

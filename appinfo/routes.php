@@ -20,11 +20,11 @@
 return [
     "routes" => [
         ["name" => "editor#index", "url" => "/{fileId}", "verb" => "GET"],
-    ],
-    "ocs" => [
         ["name" => "wopi#check_file_info", "url" => "/files/{fileId}", "verb" => "GET"],
         ["name" => "wopi#get_contents", "url" => "/files/{fileId}/contents", "verb" => "GET"],
         ["name" => "wopi#put_contents", "url" => "/files/{fileId}/contents", "verb" => "POST"],
+    ],
+    "ocs" => [
         ["name" => "settings#formats", "url" => "/settings", "verb" => "GET"],
     ]
 ];
