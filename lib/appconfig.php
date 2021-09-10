@@ -51,7 +51,7 @@ class AppConfig {
     private $_documentserver = "DocumentServerUrl";
 
     /**
-     * The config key for the document server address
+     * The config key for the secret key
      *
      * @var string
      */
@@ -111,12 +111,7 @@ class AppConfig {
      */
     public function GetSecret() {
 
-        $secret = $this->GetSystemValue($this->_secret);
-        if (empty($secret)) {
-            $secret = "secret";
-        }
-
-        return $secret;
+        return $this->GetSystemValue($this->_secret, true);
     }
 
     /**
