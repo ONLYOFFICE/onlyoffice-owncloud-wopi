@@ -113,39 +113,4 @@ class AppConfig {
 
         return $this->GetSystemValue($this->_secret, true);
     }
-
-    /**
-     * Get the document service address from the application configuration
-     *
-     * @return array
-     */
-    public function GetFormats() {
-
-        return $this->formats;
-    }
-
-    /**
-     * Additional data about formats
-     *
-     * @var array
-     */
-    private $formats = [
-        //Word
-        "docx" => [ "mime" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ],
-        "pdf" => [ "mime" => "application/pdf" ],
-        "odt" => [ "mime" => "application/vnd.oasis.opendocument.text" ],
-        "docm" => [ "mime" => "application/vnd.ms-word.document.macroEnabled.12" ],
-        "xps" => [ "mime" => "application/vnd.mx-xpsdocument" ],
-        "djvu" => [ "mime" => "image/vnd.djvu" ],
-        "txt" => [ "mime" => "text/plain" ],
-        //Excel
-        "xlsx" => [ "mime" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ],
-        "xlsm" => [ "mime" => "application/vnd.ms-excel.sheet.macroEnabled.12" ],
-        "ods" => [ "mime" => "application/vnd.oasis.opendocument.spreadsheet" ],
-        "csv" => [ "mime" => "text/csv" ],
-        //PowerPoint
-        "pptx" => [ "mime" => "application/vnd.openxmlformats-officedocument.presentationml.presentation" ],
-        "pptm" => [ "mime" => "application/vnd.ms-powerpoint.presentation.macroEnabled.12" ],
-        "odp" => [ "mime" => "application/vnd.oasis.opendocument.presentation" ]
-    ];
 }

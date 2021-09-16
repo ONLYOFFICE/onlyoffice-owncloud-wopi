@@ -22,6 +22,7 @@ namespace OCA\Onlyoffice_Wopi\Controller;
 use OCP\AppFramework\OCSController;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;
+use OCP\Files\IMimeTypeDetector;
 
 use OCA\Onlyoffice_Wopi\AppConfig;
 use OCA\Onlyoffice_Wopi\Utils;
@@ -46,16 +47,25 @@ class SettingsController extends OCSController {
     private $utils;
 
     /**
+     * Mime type detector
+     *
+     * @var IMimeTypeDetector
+     */
+    private $mimeDetector;
+
+    /**
      * @param string $AppName - application name
      * @param IRequest $request - request object
      * @param AppConfig $config - application configuration
      */
     public function __construct($AppName,
                                     IRequest $request,
-                                    AppConfig $config
+                                    AppConfig $config,
+                                    IMimeTypeDetector $mimeDetector
                                     ) {
         parent::__construct($AppName, $request);
         $this->config = $config;
+        $this->mimeDetector = $mimeDetector;
 
         $this->utils = new Utils($config);
     }
@@ -69,13 +79,10 @@ class SettingsController extends OCSController {
      * @CORS
      */
     public function formats() {
-        $formats = $this->config->GetFormats();
         $discovery = $this->utils->GetActionsByExt();
 
         foreach ($discovery as $ext => $actions) {
-            if (array_key_exists($ext, $formats)) {
-                $discovery[$ext] += $formats[$ext];
-            }
+            $discovery[$ext]["mime"] = $this->mimeDetector->detectPath(" ." . $ext);
         }
 
         return new JSONResponse([

@@ -118,7 +118,8 @@ class Application extends App {
             return new SettingsController(
                 $c->query("AppName"),
                 $c->query("Request"),
-                $this->appConfig
+                $this->appConfig,
+                $c->query("ServerContainer")->getMimeTypeDetector()
             );
         });
     }
