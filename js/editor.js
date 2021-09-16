@@ -23,18 +23,6 @@
     }, OCA.WopiOnlyoffice);
      
     OCA.WopiOnlyoffice.InitEditor = function () {
-        var frameholder = document.getElementById("frameholder");
-        var office_frame = document.createElement("iframe");
-        office_frame.name = "office_frame";
-        office_frame.id = "office_frame";
-
-        office_frame.title = "Office Frame";
-
-        office_frame.setAttribute("allowfullscreen", "true");
-
-        office_frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-popups-to-escape-sandbox");
-        frameholder.appendChild(office_frame);
-
         document.getElementById("office_form").submit();
     }
 

@@ -28,4 +28,4 @@
     <input name="access_token_ttl" value="<?php p($_["tokenttl"]) ?>" type="hidden" />
 </form>
 
-<span id="frameholder"></span>
+<iframe name="office_frame" id="office_frame" title="Office Frame" allowfullscreen="true"></iframe>
