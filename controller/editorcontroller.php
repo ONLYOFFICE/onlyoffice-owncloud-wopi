@@ -208,7 +208,10 @@ class EditorController extends Controller {
      */
     private function getActionUrl($action, $fileId) {
         $wopisrc = $this->urlGenerator->linkToRouteAbsolute($this->appName . ".wopi.check_file_info", ["fileId" => $fileId]);
-        $actionUrl = preg_replace("/<.*&>/", "", $action["urlsrc"]) . "WOPISrc=" . $wopisrc;
+        $langCode = str_replace("_", "-", \OC::$server->getL10NFactory("")->get("")->getLanguageCode());
+
+        $actionUrl = preg_replace("/<.*&>/", "", $action["urlsrc"]) . "WOPISrc=" . $wopisrc
+                        . "&lang=" . $langCode;
 
         return $actionUrl;
     }
